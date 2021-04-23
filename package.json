@@ -2,8 +2,9 @@
   "name": "vite-react-app",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite --mode development",
+    "build:beta": "vite build --mode beta",
+    "build:release": "vite build --mode release",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -13,11 +14,13 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@types/node": "^14.14.41",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
     "@vitejs/plugin-react-refresh": "^1.3.1",
     "less": "^4.1.1",
+    "less-vars-to-js": "^1.3.0",
     "typescript": "^4.1.2",
     "vite": "^2.1.3",
     "vite-plugin-imp": "^2.0.7"
