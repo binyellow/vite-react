@@ -1,11 +1,10 @@
 import React from 'react';
 import { Button } from 'antd';
+import CascaderCOm from './Cascader';
 
 const Home = () => {
   return (
-    <Button type="primary">
-      home
-    </Button>
+    <CascaderCOm type="multiple" data={[]} />
   );
 };
 
