@@ -38,7 +38,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 3001,
+    port: 3008,
     proxy: {
       // '/api': {
       //   target: 'http://47.99.134.126:28019/api/v1',
