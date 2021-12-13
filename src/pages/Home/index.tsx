@@ -1,11 +1,42 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Cascader } from 'antd';
 
 const Home = () => {
+  const options = [
+    {
+      label: 'Light',
+      value: 'light',
+      children: new Array(20)
+        .fill(null)
+        .map((_, index) => ({ label: `Number ${index}`, value: index })),
+    },
+    {
+      label: 'Bamboo',
+      value: 'bamboo',
+      children: [
+        {
+          label: 'Little',
+          value: 'little',
+          children: [
+            {
+              label: 'Toy Fish',
+              value: 'fish',
+            },
+            {
+              label: 'Toy Cards',
+              value: 'cards',
+            },
+            {
+              label: 'Toy Bird',
+              value: 'bird',
+            },
+          ],
+        },
+      ],
+    },
+  ];
   return (
-    <Button type="primary">
-      home
-    </Button>
+    <Cascader options={options} defaultValue={['bamboo']} />
   );
 };
 
