@@ -976,10 +976,19 @@ rc-menu@^9.0.0, rc-menu@~9.0.12:
     rc-util "^5.12.0"
     shallowequal "^1.1.0"
 
-rc-motion@^2.0.0, rc-motion@^2.0.1, rc-motion@^2.2.0, rc-motion@^2.3.0, rc-motion@^2.3.4, rc-motion@^2.4.3, rc-motion@^2.4.4:
+rc-motion@^2.0.0, rc-motion@^2.0.1, rc-motion@^2.2.0, rc-motion@^2.3.0, rc-motion@^2.3.4, rc-motion@^2.4.3:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/rc-motion/-/rc-motion-2.4.4.tgz#e995d5fa24fc93065c24f714857cf2677d655bb0"
   integrity sha512-ms7n1+/TZQBS0Ydd2Q5P4+wJTSOrhIrwNxLXCZpR7Fa3/oac7Yi803HDALc2hLAKaCTQtw9LmQeB58zcwOsqlQ==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-util "^5.2.1"
+
+rc-motion@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.nlark.com/rc-motion/download/rc-motion-2.4.4.tgz?cache=0&sync_timestamp=1622690263011&other_urls=https%3A%2F%2Fregistry.nlark.com%2Frc-motion%2Fdownload%2Frc-motion-2.4.4.tgz#e995d5fa24fc93065c24f714857cf2677d655bb0"
+  integrity sha1-6ZXV+iT8kwZcJPcUhXzyZ31lW7A=
   dependencies:
     "@babel/runtime" "^7.11.1"
     classnames "^2.2.1"
