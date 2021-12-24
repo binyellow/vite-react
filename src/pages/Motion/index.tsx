@@ -13,7 +13,7 @@ const index = () => {
         leavedClassName="animation-hidden"
       >
         {({ style, className }, ref) => {
-          console.log(className);
+          console.log(className, Date.now());
           return (
             <div ref={ref} style={{ ...style, height: "100%" }} className={className}>
               123

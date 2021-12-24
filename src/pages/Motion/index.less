@@ -2,8 +2,10 @@
   animation-duration: 0.3s;
   animation-fill-mode: both;
 
-  &&-enter {
-    // animation-name: enter;
+  &&-enter,
+  &&-appear {
+    animation-name: enter;
+    animation-play-state: paused;
   }
 
   // 如果写的是命中3个class的会重复render，不知道为啥
