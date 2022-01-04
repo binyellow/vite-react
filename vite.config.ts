@@ -22,7 +22,12 @@ export default defineConfig({
       libList: [
         {
           libName: "antd",
-          style: (name) => `antd/es/${name}/style`,
+          style: (name) => {
+            if (name === "col" || name === "row") {
+              return "antd/lib/style/index.less";
+            }
+            return `antd/es/${name}/style/index.less`;
+          },
         },
       ],
     })
@@ -48,9 +53,6 @@ export default defineConfig({
     }
   },
   resolve: {
-    alias: {
-      '~': path.resolve(__dirname, './'),
-      '@': path.resolve(__dirname, 'src')
-    }
+    alias: []
   },
 })
