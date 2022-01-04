@@ -6,7 +6,7 @@ const Home = () => {
     {
       label: "Light",
       value: "light",
-      children: new Array(20).fill(null).map((_, index) => ({ label: `Number ${index}`, value: index })),
+      children: new Array(20).fill(null).map((_, index) => ({ label: `Number ${index}`, value: `${index}` })),
     },
     {
       label: "Bamboo",
@@ -81,7 +81,7 @@ const Home = () => {
   return (
     <>
       <div style={{ textAlign: "right" }}>
-        <Cascader options={options} defaultValue={["fish"]} multiple />
+        <Cascader options={options} multiple />
       </div>
       <Tree treeData={treeData} checkable defaultCheckedKeys={["0-1-0-0", "0-0-0-0"]} />
     </>
