@@ -1,17 +1,15 @@
-import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import vitePluginImp from 'vite-plugin-imp'
-import path from 'path'
-import fs from 'fs'
-import lessToJS from 'less-vars-to-js'
-import config from './config/index'
+import { defineConfig } from "vite";
+import reactRefresh from "@vitejs/plugin-react-refresh";
+import vitePluginImp from "vite-plugin-imp";
+import path from "path";
+import fs from "fs";
+import lessToJS from "less-vars-to-js";
+import config from "./config/index";
 
-const themeVariables = lessToJS(
-  fs.readFileSync(path.resolve(__dirname, './config/variables.less'), 'utf8')
-)
+const themeVariables = lessToJS(fs.readFileSync(path.resolve(__dirname, "./config/variables.less"), "utf8"));
 
-const env = process.argv[process.argv.length - 1]
-const base = config[env]
+const env = process.argv[process.argv.length - 1];
+const base = config[env];
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,7 +28,7 @@ export default defineConfig({
           },
         },
       ],
-    })
+    }),
   ],
   css: {
     preprocessorOptions: {
@@ -38,9 +36,9 @@ export default defineConfig({
         // 支持内联 JavaScript
         javascriptEnabled: true,
         // 重写 less 变量，定制样式
-        modifyVars: themeVariables
-      }
-    }
+        modifyVars: themeVariables,
+      },
+    },
   },
   server: {
     port: 3008,
@@ -50,9 +48,19 @@ export default defineConfig({
       //   changeOrigin: true,
       //   rewrite: path => path.replace(/^\/api/, '')
       // }
-    }
+    },
   },
   resolve: {
-    alias: []
+    alias: [
+      {
+        find: "~",
+        replacement: path.resolve(__dirname, "./"),
+      },
+      {
+        find: "@",
+        replacement: path.resolve(__dirname, "src"),
+      },
+      { find: /^~/, replacement: "" },
+    ],
   },
-})
+});
